@@ -1,0 +1,661 @@
+body{
+    overflow-x: hidden;
+}
+*,body,html{
+    margin: 0;
+    padding: 0;;
+}
+body{
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar{
+    width: 100%; 
+    height: 50px; 
+    position: fixed;
+    z-index: 100;
+}
+
+.navbar.sticky{
+    background-color: rgb(255, 255, 255);
+    transition: 1s;
+    z-index: 100;
+}
+
+.aktive{
+    color: red;
+}
+.navbar.sticky .aktive{
+    color: red;
+}
+
+.navbar h2.change-color{
+    color: black;
+    transition: 1s;
+}
+
+.navbar a.change-color2{
+    color: black;
+    transition: 1s;
+}
+
+
+nav{
+    width: 100% ;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logo{
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    line-height: 0.4;
+}
+.logo h2 {
+    margin-top: 18px;
+    margin-left:  5px;
+    font-size: 18px;
+}
+.img-logo{
+    width: 27px;
+    height: 27px;
+    padding-left: 40px;
+    margin-top: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 40px;
+    padding-top: 12px;
+}
+
+
+nav ul  li{
+    padding-left: 30px;
+    list-style-type: none;
+}
+
+nav ul li a{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.active{
+    color: red;
+}
+
+nav ul :hover{
+    color: red;
+}
+.menu-toggle{
+    margin-top: 15px;
+    margin-right: 10px;
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -7px;
+    top: -5px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display:block;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+.menu-toggle span.burger-color{
+  background-color: black;
+}
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+
+.menu-toggle input:checked ~ span:nth-child(2){
+transform: rotate(45deg)
+translate(-1px, -1px);
+background-color: black;
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-1px, 0);
+    background-color: black;
+    }
+.menu-toggle input:checked ~ span:nth-child(3){
+transform: scale(0);
+        }
+
+@media screen and (max-width: 576px){
+    nav ul {
+        position: absolute;
+        flex-direction: column;
+        background-color: white;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: -1;
+        width: 100%;
+        transform: translateX(100%);
+        transition: all 3s;
+        transition-delay: 0.7s;
+    }
+    .navbar nav ul a{
+        color: black;
+    }
+
+    .menu-toggle{
+        display: flex;
+    }
+
+    nav ul.slide{
+        transform: translateX(0);
+    }
+}
+
+/* cover ATas */
+.iframe-production {
+    position: relative;
+    width: 100%;
+    margin: 0 auto; /* Menengahkan div jika lebar layar lebih besar dari 1000px */
+}
+
+.iframe-production img {
+    width: 100%;
+}
+
+.des-cover-atas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.des-cover-atas h1 {
+    font-size: 70px;
+    text-shadow: 0px 2px 4px rgba(255, 255, 255, 0.8);
+    margin: 0; /* Menghilangkan margin default */
+}
+
+.des-cover-atas h2 {
+    font-size: 27px;
+    margin-top: -5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.des-cover-atas h4 {
+    font-weight: 100;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.des-cover-atas h5 {
+    margin-top: 20px; /* Mengurangi margin-top agar lebih proporsional */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.des-cover-atas button {
+    background-color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    width: 170px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.des-cover-atas button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.mian {
+    width: 100%;
+    height: auto;
+}
+
+/* KONTEN CUKPLIKAN FILM */
+.conten-film font {
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+.conten-film {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    margin-top: 20px;
+}
+
+.conten-film img {
+    width: 300px;
+    height: auto;
+}
+
+.cuplikan-film{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.efek-hover{
+    position: absolute;
+    opacity: 0;
+}
+
+.efek-hover:hover{
+   opacity: 0.9;
+   animation-delay: 2ms;
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+
+    .cuplikan-film{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 700px;
+    }
+    
+    .des-cover-atas{
+        margin-top: 400px;
+    }
+}
+
+/* FORMAT LAHAY TABLET  */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+
+/* conten deskripsi film */
+.des-production-film{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 250px;
+}
+
+.conten-des-production{
+    width: 250px;
+    margin-top: 50px;
+    
+}
+
+.conten-des-production h3 {
+    text-align: center;
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.conten-des-production h5 {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.601);
+}
+
+.des-film{
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+    .des-production-film {
+        flex-direction: column; /* Mengubah tata letak menjadi satu kolom */
+        align-items: center; /* Pusatkan elemen-elemen */
+    }
+
+    .conten-des-production {
+        width: 80%; /* Sesuaikan lebar elemen dengan layar kecil */
+    }
+
+    .conten-des-production h3 {
+        border-radius: 15px; /* Sesuaikan bentuk border-radius */
+    }
+
+    .conten-des-production h5 {
+        font-size: 14px; /* Sesuaikan ukuran font */
+    }
+
+    .des-film {
+        margin-top: 50px; /* Sesuaikan margin pada elemen des-film */
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .des-production-film {
+    flex-direction: column; /* Mengubah arah flex menjadi kolom */
+    align-items: center; /* Pusatkan elemen dalam kolom */
+    margin-top: 100px; /* Atur margin atas */
+}
+
+.conten-des-production {
+    width: 100%; /* Mengisi lebar layar */
+    margin-top: 20px; /* Atur margin atas */
+}
+}
+
+
+/* conten deskeripsi poster film cinema */
+.des-film-poster{
+    display: flex;
+    flex-direction: column;
+}
+
+.poster{
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.human{
+    width: 200px;
+    height: auto;
+}
+
+.des-film-poster {
+    width: 700px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column ;
+}
+
+.des-film-poster h5 {
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.600);
+    text-align: justify;
+}
+
+.des-kru-film{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+
+.des-kru-film h2 {
+    text-align: center;
+}
+
+.des-kru-film h3{
+    text-align: center;
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+
+    .des-film{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .poster {
+        width: 300px;
+        align-items: center;
+    }
+    .des-film-poster {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .des-film-poster h1 {
+        text-align: center;
+    }
+
+    .des-film-poster h5 {
+        text-align: left;
+        margin-top: 20px;
+        text-align: justify;
+    }
+
+    .des-kru-film {
+        width: 100%;
+        margin-top: 20px;
+        align-items: center;
+    }
+}
+
+
+
+
+/* FORMAT LAHAY TABLET  */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+
+.poster-production-film{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.poster-production-film img {
+    width: 80%;
+    border-radius: 20px;
+}
+
+
+
+
+footer{
+    width: 100%;
+    height: 100px;
+   background-color: rgb(17, 16, 16);
+    margin-top: 100px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-footer {
+    margin-left: 0px; 
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-footer h4{
+    margin-left: 4px;
+}
+
+.logo-sosmed{
+    margin-top: 10px;
+
+    display: flex;
+} 
+
+.left-mid-footer{
+    display: flex;
+    margin-left: 50px;
+
+}
+
+.logo-sosmed img {
+    padding-left: 5px;
+    width: 20px;
+}
+
+.mid-footer{
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.mid-footer h4{
+    margin-top: 0px;
+    font-weight: 100;
+    color: white;
+    line-height: 2;
+}
+
+.mid-footer h5 a {
+    text-decoration:  none;
+    color: rgba(255, 255, 255, 0.600);  
+}
+
+.right-footer{
+    
+}
+
+.right-footer h4{
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 0px;
+    letter-spacing: 5px;
+}
+
+.right-footer h6{
+    margin-right: 0px;
+    text-align: right;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.600);
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+    footer {
+        width: 100%;
+        height: auto;
+        background-color: rgb(17, 16, 16);
+        margin-top: 100px;
+        color: white;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+    
+    .left-mid-footer {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        margin-left: 0; 
+        margin-top: 20px;
+    }
+    
+    .left-footer {
+        margin-left: 0; 
+    }
+    
+    .logo-sosmed {
+        margin-top: 10px;
+        width: 20px;
+        display: flex;
+        justify-content: center; 
+    }
+    
+    .left-footer h4 {
+        margin-left: 0;
+        text-align: center; 
+    }
+    
+    .logo-sosmed img {
+        padding-left: 5px;
+        width: 20px;
+    }
+    
+    .mid-footer {
+        margin-top: 20px;
+        margin-left: 0;
+        text-align: center; 
+    }
+    
+    .mid-footer h4 {
+        margin-top: 0;
+        font-weight: 100;
+        color: white;
+        line-height: 2;
+    }
+    
+    .mid-footer h5 a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.600);
+        display: block; 
+    }
+    
+    .right-footer {
+        text-align: center; 
+    }
+    
+    .right-footer h4 {
+        margin-top: 20px;
+        margin-right: 0;
+        text-align: center; 
+        letter-spacing: 5px;
+    }
+    
+    .right-footer h6 {
+        margin-right: 0;
+        margin-top: 10px;
+        color: rgba(255, 255, 255, 0.600);
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+
+
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+    
+}
+
+
+
+
+/* FORMAT LAHAY TABLET  */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
