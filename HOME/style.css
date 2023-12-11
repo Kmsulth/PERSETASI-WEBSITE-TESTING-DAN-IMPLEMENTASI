@@ -1,0 +1,679 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+  /* NAvigasi*/
+body{
+    overflow-x: hidden;
+}
+*,body,html{
+    margin: 0;
+    padding: 0;;
+}
+body{
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+iframe{
+    margin-left: 0px;
+}
+
+.navbar{
+    width: 100%; 
+    height: 50px; z-index:2 ; 
+    margin-top: -1150px; 
+    position: fixed ;
+    z-index: 2;
+}
+
+.navbar.sticky{
+    background-color: rgb(255, 255, 255);
+    transition: 1s;
+}
+
+.navbar h2.change-color{
+    color: black;
+    transition: 1s;
+}
+
+.navbar.sticky .aktive{
+    color: red;
+}
+
+.aktive{
+    color: red;
+}
+
+.navbar a.change-color2{
+    color: black;
+    transition: 1s;
+}
+
+
+nav{
+    width: 100% ;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logo{
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    line-height: 0.4;
+}
+.logo h2 {
+    margin-top: 18px;
+    margin-left:  5px;
+    font-size: 18px;
+}
+.img-logo{
+    width: 27px;
+    height: 27px;
+    padding-left: 40px;
+    margin-top: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 40px;
+    padding-top: 12px;
+}
+
+
+nav ul  li{
+    padding-left: 30px;
+    list-style-type: none;
+}
+
+nav ul li a{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+nav ul :hover{
+    color: red;
+}
+.menu-toggle{
+    margin-top: 15px;
+    margin-right: 10px;
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -7px;
+    top: -5px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display:block;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+.menu-toggle span.burger-color{
+  background-color: black;
+}
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+
+.menu-toggle input:checked ~ span:nth-child(2){
+transform: rotate(45deg)
+translate(-1px, -1px);
+background-color: black;
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-1px, 0);
+    background-color: black;
+    }
+.menu-toggle input:checked ~ span:nth-child(3){
+transform: scale(0);
+        }
+
+@media screen and (max-width: 576px){
+    nav ul {
+        position: absolute;
+        flex-direction: column;
+        background-color: white;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: -1;
+        width: 100%;
+        transform: translateX(100%);
+        transition: all 3s;
+        transition-delay: 0.7s;
+    }
+    .navbar nav ul a{
+        color: black;
+    }
+
+    .menu-toggle{
+        display: flex;
+    }
+
+    nav ul.slide{
+        transform: translateX(0);
+    }
+}
+
+
+.about{
+    display: flex;  
+    margin-top: -80px; 
+    position: absolute;
+    justify-content: center;
+}
+
+.about img{
+    width: 400px; 
+    margin-left: 70px;
+}
+
+.des-about h4{
+    font-weight: 500; font-size:20px;
+    width: 700px;
+}
+
+.des-about{
+    font-family: 'Montserrat', sans-serif ; 
+    margin-top: 10%; 
+    margin-left: 50px; 
+    width: 500px; 
+    color: white; 
+    font-family:'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 576px){
+    .about{
+        width: 100%;
+        align-items: center;
+        margin-left: 100px;
+        margin-top: -300px;
+        justify-content: center;
+        display: flex;
+    }
+
+    .about img{
+        height: 300px;
+        margin-left: -100px;
+        display: flex;
+        justify-content: center;
+    }
+    .des-about{
+        margin-left: -400px;
+        text-align: center;
+        margin-top: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .des-about  h4 {
+        font-size: 16px;
+        width: 400px;
+
+    }
+    .des-about h6{
+        text-align: center;
+        margin-left: -100px;
+    }
+}
+/*-- daftar poster--------------*/
+.daftar-poster{
+width: 100%;
+height: 750px;
+color: aliceblue;
+position: absolute;
+margin-top: 550px;
+}
+
+.daftar-poster h2{
+    margin-left: 100px;
+}
+
+.poster{
+    width: 300px;
+    height: 500px;
+    background-color:black;
+    margin-top: 50px;
+    border: 2px solid white;
+}
+.poster img {
+    width: 100%;
+}
+
+.poster h5{
+    text-align: center;
+}
+
+.content-poster{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content-poster .poster{
+    margin-left: 20px;
+}
+
+.content-poster a {
+    color: white;
+}
+
+.poster:hover{
+    background-color: white;
+    color: black;
+}
+
+.content-poster a{
+    text-decoration: none;
+}
+
+.btn-poster a button{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-weight: bold;
+}
+
+.btn-poster button {
+    padding: 30px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 12px;
+    border: 1px solid black;
+}
+
+.btn-poster{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.btn-poster a :hover {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+
+}
+@media screen and (max-width: 576px){
+    .daftar-poster{
+        margin-left: 0px;
+    }
+
+    .daftar-poster h2{
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    .content-poster{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-poster {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-left: 0px;
+    }
+    
+
+    .poster{
+        width: 250px;
+        height: 425px;
+    }
+}
+
+/* EVENT CINEMA*/
+
+.clear{
+    clear: both;
+    position: relative;
+    margin-top:1300px;
+}
+
+.event{
+    width: 100%;
+    height: 750px;
+    position:relative;
+    margin-top: 138 0px;
+    color: white;
+}
+.event h2{
+    margin-left: 100px;
+}
+
+.daftar-event{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-event{
+    width: 843px;
+    height: 88px;
+    background-color: brown;
+}
+.img-event a{
+    color: white;
+}
+
+.event-cinema{
+    display: flex; 
+    align-items: center; justify-content: center;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+.img-event img{
+    width: 100%;
+}
+
+.des-event h3{
+    margin-top: 0px;
+    align-items: end;
+}
+
+.des-event{
+    z-index: 2;
+    text-align: center;
+    width: 843px; 
+    height: 88px;
+    margin-top: -92px;
+    position: relative;
+}
+
+.des-event h3{
+    margin-top:30px;
+    position: absolute;
+    margin-left: 350px;
+}
+
+.des-event1{
+    z-index: 2;
+    text-align: center;
+    width: 843px; 
+    height: 88px;
+    margin-top: -88px;
+    position: relative;
+    background-color:transparent;
+    color: transparent;
+}
+.des-event1 h5{
+    margin-top:30px;
+    position: absolute;
+    margin-left:0px;
+}
+
+.des-event1:hover{
+    background-color: white;
+    transition: all 3s;
+    color: black;
+}
+
+@media screen and (max-width: 576px){
+    .event{
+        margin-top: 2700px;
+    }
+
+    .event h2{
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    .img-event {
+        width: 500px;   
+        height: 80px;     
+    }
+
+    .img-event img{
+        width: 500px;
+        height: 80px;
+    }
+
+    .des-event h3{
+        margin-left: 200px;
+        margin-top: 30px;
+        font-size: 15px;
+    }
+
+    .des-event1{
+        width: 500px;
+        height: 80px;
+        margin-top: -80px;
+    }
+
+    .des-event1 h5{
+        margin-top: 20px;
+        font-size: 10px;
+    }
+}
+
+/* Dicord cinema*/
+
+.discord{
+    width: 90%;
+    height: 100px;
+    background-color: white;
+    margin-top: 150px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper-discord a{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+}
+
+.discord img{
+    width: 100px;
+    height: 80px;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+.discord h2{
+    color: black;
+    margin-top: 35px;
+    margin-right: 150px;
+}
+
+.wrapper-discord a .discord:hover{
+    width: 92%;
+    height: 100px;
+}
+
+.award img{
+    width: 100%;
+    margin-top: 100px;
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+   background-color: rgb(17, 16, 16);
+    margin-top: 100px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-footer {
+    margin-left: 0px; 
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-footer h4{
+    margin-left: 4px;
+}
+
+.logo-sosmed{
+    margin-top: 10px;
+
+    display: flex;
+} 
+
+.left-mid-footer{
+    display: flex;
+    margin-left: 50px;
+
+}
+
+.logo-sosmed img {
+    padding-left: 5px;
+    width: 20px;
+}
+
+.mid-footer{
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.mid-footer h4{
+    margin-top: 0px;
+    font-weight: 100;
+    color: white;
+    line-height: 2;
+}
+
+.mid-footer h5 a {
+    text-decoration:  none;
+    color: rgba(255, 255, 255, 0.600);  
+}
+
+.right-footer{
+    
+}
+
+.right-footer h4{
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 0px;
+    letter-spacing: 5px;
+}
+
+.right-footer h6{
+    margin-right: 0px;
+    text-align: right;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.600);
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+    footer {
+        width: 100%;
+        height: auto;
+        background-color: rgb(17, 16, 16);
+        margin-top: 100px;
+        color: white;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+    
+    .left-mid-footer {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        margin-left: 0; 
+        margin-top: 20px;
+    }
+    
+    .left-footer {
+        margin-left: 0; 
+    }
+    
+    .logo-sosmed {
+        margin-top: 10px;
+        width: 20px;
+        display: flex;
+        justify-content: center; 
+    }
+    
+    .left-footer h4 {
+        margin-left: 0;
+        text-align: center; 
+    }
+    
+    .logo-sosmed img {
+        padding-left: 5px;
+        width: 20px;
+    }
+    
+    .mid-footer {
+        margin-top: 20px;
+        margin-left: 0;
+        text-align: center; 
+    }
+    
+    .mid-footer h4 {
+        margin-top: 0;
+        font-weight: 100;
+        color: white;
+        line-height: 2;
+    }
+    
+    .mid-footer h5 a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.600);
+        display: block; 
+    }
+    
+    .right-footer {
+        text-align: center; 
+    }
+    
+    .right-footer h4 {
+        margin-top: 20px;
+        margin-right: 0;
+        text-align: center; 
+        letter-spacing: 5px;
+    }
+    
+    .right-footer h6 {
+        margin-right: 0;
+        margin-top: 10px;
+        color: rgba(255, 255, 255, 0.600);
+        text-align: center;
+    }
+}
