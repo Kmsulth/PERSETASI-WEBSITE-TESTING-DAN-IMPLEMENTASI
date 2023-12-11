@@ -1,0 +1,1028 @@
+body{
+    overflow-x: hidden;
+}
+*,body,html{
+    margin: 0;
+    padding: 0;;
+}
+body{
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar{
+    width: 100%; 
+    height: 50px; 
+    position: fixed;
+    z-index: 100;
+}
+
+.navbar.sticky{
+    background-color: rgb(255, 255, 255);
+    transition: 1s;
+    z-index: 100;
+}
+.aktive{
+    color: red;
+}
+.navbar.sticky .aktive{
+    color: red;
+}
+
+.navbar h2.change-color{
+    color: black;
+    transition: 1s;
+}
+
+.navbar a.change-color2{
+    color: black;
+    transition: 1s;
+}
+
+
+nav{
+    width: 100% ;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logo{
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    line-height: 0.4;
+}
+.logo h2 {
+    margin-top: 18px;
+    margin-left:  5px;
+    font-size: 18px;
+}
+.img-logo{
+    width: 27px;
+    height: 27px;
+    padding-left: 40px;
+    margin-top: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 40px;
+    padding-top: 12px;
+}
+
+
+nav ul  li{
+    padding-left: 30px;
+    list-style-type: none;
+}
+
+nav ul li a{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+nav ul :hover{
+    color: red;
+}
+.menu-toggle{
+    margin-top: 15px;
+    margin-right: 10px;
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -7px;
+    top: -5px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display:block;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+.menu-toggle span.burger-color{
+  background-color: black;
+}
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+
+.menu-toggle input:checked ~ span:nth-child(2){
+transform: rotate(45deg)
+translate(-1px, -1px);
+background-color: black;
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-1px, 0);
+    background-color: black;
+    }
+.menu-toggle input:checked ~ span:nth-child(3){
+transform: scale(0);
+        }
+
+@media screen and (max-width: 576px){
+    nav ul {
+        position: absolute;
+        flex-direction: column;
+        background-color: white;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: -1;
+        width: 100%;
+        transform: translateX(100%);
+        transition: all 3s;
+        transition-delay: 0.7s;
+    }
+    .navbar nav ul a{
+        color: black;
+    }
+
+    .menu-toggle{
+        display: flex;
+    }
+
+    nav ul.slide{
+        transform: translateX(0);
+    }
+}
+
+/* paralax efect */
+
+.paralax{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.paralax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.main{
+    position: relative;
+  /*   background-color: red; */
+    width: 100%;
+    height: auto;
+}
+
+.cinemask{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 220px;
+}
+
+.cinemask img{
+    width: 800px;
+    height: auto;
+}
+
+.cinemask div{
+    width: 600px;
+    margin-top: -100px;
+    margin-left: -120px;
+}
+
+.cinemask div h1{
+    line-height: 0;
+    color: #ebc42d;
+}
+
+.cinemask div span{
+    font-size: 14px;
+    color: white;
+    text-shadow: 2px 2px 4px black ;
+}
+
+
+/* FORMAT LAHAY TABLET  */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .paralax{
+        height: 70vh;
+    }
+    .cinemask {
+        flex-direction: column; 
+        text-align: center; 
+        margin-top: 40px; 
+    }
+
+    .cinemask img {
+        max-width: 100%; 
+    }
+
+    .cinemask div {
+        width: 80%; 
+        margin: 20px auto; 
+    }
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+
+    .main{
+        margin-top: -150px;
+    }
+    
+    .paralax{
+        height: 400px;
+    }
+
+    .cinemask {
+        flex-direction: column; 
+        text-align: center;
+        margin-top: -10px; 
+    }
+
+    .cinemask img {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+
+    .cinemask span {}
+
+    .cinemask div {
+        width: 80%; 
+        margin: 0; 
+        text-align: justify;
+        align-items: center;
+    }
+    .cinemask div h1 {
+        line-height: 1; 
+        text-align: center;
+    }
+    
+}
+
+
+/* EVENT CINESENSATION */
+.cinesensation{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.cinesensation h1{
+    text-align: center;
+    color: white;
+}
+
+.cinesensation img{
+    width: 1280px;
+}
+
+.cinesensation h4{
+    color: white;
+    font-weight: 300;
+    text-align: left;
+    width: 700px;
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+
+    .cinesensation{
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .img-cines{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .cinesensation img {
+        width: 90%; /* Lebar gambar 100% agar sesuai dengan lebar layar */
+    }
+
+    .cinesensation h4 {
+        width: 90%; 
+        margin: 10px 0; 
+        text-align: left; 
+        font-size: 10px;
+    }
+}
+
+/* layar tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .cinesensation img {
+        width: 90%;
+        margin-left: 50px; 
+    }
+
+    .cinesensation h4 {
+        width: 70%; 
+        margin-left: 50px;
+        font-size: 10px;
+    }
+
+}
+
+
+
+
+/* event bukber cinema */
+
+.bukber-cinema{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 250px;
+}
+
+.title{
+    justify-content: center;
+    display: flex;
+}
+
+.title h1{
+    color: white;
+    align-items: center;
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 70px;
+}
+
+.img-title-bukber{
+    margin-left: -50px;
+}
+.img-title-bukber img{
+    width: 280px;
+    height: 170px;
+}
+
+.des-bukber{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+.des-bukber h6{
+    color: rgba(255, 255, 255, 0.600);
+    font-weight: 100;
+    width: 700px;
+    margin-top: 60px;
+}
+
+.des-img-bukber img{
+    width: 280px;
+    height:170px ;
+}
+/* FORMAT LAHAY TABLET  */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .bukber-cinema {
+        margin-top: 100px; /* Sesuaikan margin top sesuai kebutuhan */
+    }
+
+    .title {
+        flex-direction: column; /* Susun elemen secara vertikal */
+        align-items: center;
+        text-align: center;
+    }
+
+    .title h1 {
+        margin-left: 0; /* Hapus margin kiri */
+        margin-top: 20px; /* Sesuaikan margin top sesuai kebutuhan */
+    }
+
+    .img-title-bukber {
+        margin-left: 0; /* Hapus margin kiri */
+    }
+
+    .img-title-bukber img {
+        margin-bottom: 20px; /* Berikan margin di bawah gambar */
+    }
+
+    .des-bukber {
+        flex-direction: column; /* Susun elemen secara vertikal */
+        align-items: center;
+        text-align: center;
+    }
+
+    .des-bukber h6 {
+        width: 100%; /* Lebar teks 100% agar sesuai dengan lebar layar */
+        margin-top: -30px; /* Sesuaikan margin top sesuai kebutuhan */
+    }
+
+    .des-img-bukber {
+        margin-top: 20px; /* Sesuaikan margin top sesuai kebutuhan */
+    }
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+
+    .bukber-cinema{
+        margin-top: 50px;
+    }
+    .title {
+        flex-direction: column; /* Menyusun elemen secara vertikal */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title h1 {
+        margin-left: 0; /* Reset margin */
+        margin-top: 20px; /* Sesuaikan margin top sesuai kebutuhan */
+    }
+
+    .img-title-bukber {
+        margin-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .img-title-bukber img{
+        width: 180px;
+        height: auto;
+    }
+
+    .des-bukber {
+        flex-direction: column; /* Menyusun elemen secara vertikal */
+        align-items: center;
+    }
+
+    .des-bukber h6 {
+        width: 100%; /* Lebar teks 100% agar sesuai dengan lebar layar */
+        text-align: center; /* Pusatkan teks */
+        margin-top: -30px; /* Sesuaikan margin top sesuai kebutuhan */
+    }
+
+    .des-img-bukber {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .des-img-bukber img {
+        width: 200px;
+        height: auto;
+        margin-left: 20px;
+    }
+}
+
+
+/* avent makrab dan photoshoot */
+
+.makrab-ph{
+    width: 100%;
+    height: 350px;
+    background-color: #201f1f;
+    margin-top: 200px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    
+}
+
+.conten-makrab-ph{
+    display: flex;
+}
+
+.conten-makrab-ph img{
+    width: 250px;
+    height: 250px;
+}
+
+.conten-makrab-ph font{
+    color: white;
+    width: 250px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.conten-makrab-ph h1 {
+    line-height: 2;
+}
+
+/* FORMAT LAHAY TABLET  */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .makrab-ph {
+        flex-direction: column; 
+        height: auto; 
+        padding: 20px; 
+        text-align: center; 
+    }
+
+    .conten-makrab-ph {
+        margin-bottom: 20px; 
+    }
+
+    .conten-makrab-ph img {
+        margin-bottom: 10px; 
+    }
+
+    .conten-makrab-ph font {
+        margin-left: 100px; 
+    }
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+    .makrab-ph {
+        flex-direction: column; 
+        height: auto;
+        margin-top: 100px; 
+    }
+
+    .conten-makrab-ph {
+        margin-bottom: 20px; 
+    }
+
+    .conten-makrab-ph img {
+        width: 150px; 
+        height: 150px; 
+        margin-top: 15px;
+    }
+
+    .conten-makrab-ph font {
+        width: 100%; 
+        margin: 0; 
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 15px;
+    }
+
+    .conten-makrab-ph h1{
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .conten-makrab-ph h6{
+        font-size: 8px;
+        text-align: justify; 
+    }
+
+}
+
+.asik-bertangkup {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+.asik-bertangkup img{
+    width: 90%;
+    height: auto;
+    opacity: 0.7;
+}
+
+/* layat ssmart phone */
+
+@media screen and (max-width: 767px) {
+    .asik-bertangkup {
+        margin-top: 80px;
+    }
+}
+
+
+/* EVENT CINEMA FESTIVAL */
+.cinema-festifal{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.cinema-festifal img{
+    width: 500px;
+    opacity: 0.8;
+}
+
+.cinema-festifal font {
+    color: white;
+    width: 600px;
+    text-align: justify;
+    margin-top: 175px;
+    margin-left: 50px;
+}
+
+.cinema-festifal h1 {
+    line-height: 1.5;
+}
+
+/* LAYAR SMARTPHONE */
+
+@media screen and (max-width: 767px) {
+    .cinema-festifal {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        margin-top: 0px;
+    }
+
+    .cinema-festifal img {
+        width: 80%; 
+    }
+
+    .cinema-festifal font {
+        width: 80%; 
+        margin: 20px; 
+    }
+}
+/* FORMAT LAHAY TABLET  */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .cinema-festifal {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .cinema-festifal img {
+        width: 90%; 
+        margin-bottom: 20px;
+    }
+
+    .cinema-festifal font {
+        width: 90%; 
+        margin: 0; 
+    }
+}
+
+/* EVENT CINEMA AWARDS */
+
+.cinema-awards{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.title-cinema-awards img{
+    width: 500px;
+}
+
+.cover-awards img{
+    width: 100%;
+    position: relative;
+    z-index: -1;
+    opacity: 0.9;
+    margin-top: -280px;
+}
+
+.cinema-awards font {
+    display: flex;
+    justify-content: space-around;
+    color: rgba(255, 255, 255, 0.600);
+    width: 90%;
+}
+
+.cinema-awards font h5{
+    width: 700px;
+    margin-top: -10px;
+    font-weight: 100;
+    text-align: justify;
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+
+    .title-cinema-awards {
+        display: flex;
+        justify-content: center;
+    }
+    .title-cinema-awards img {
+        width: 80%; 
+    }
+
+    .cover-awards img {
+        margin-top: -100px; /* Hapus margin top pada gambar cover */
+    }
+
+    .cinema-awards font {
+        width: 80%; /* Lebar font 100% agar sesuai dengan lebar layar */
+        text-align: center; /* Pusatkan teks */
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .cinema-awards font h5 {
+        width: 100%; /* Lebar h5 100% agar sesuai dengan lebar layar */
+        text-align: justify;
+        margin-top: 10px;
+    }
+}
+
+/* FORMAT LAHAY TABLET  */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .cinema-awards font {
+        flex-direction: column; /* Susun elemen secara vertikal */
+        align-items: center; /* Pusatkan elemen secara horizontal */
+        text-align: center; /* Pusatkan teks */
+    }
+
+    .cinema-awards font h5 {
+        width: 100%; /* Lebar teks 100% agar sesuai dengan lebar layar */
+        margin-top: 10px; /* Sesuaikan margin top sesuai kebutuhan */
+    }
+}
+
+.cinema-night{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+.cover-cinema-night {
+    width: 90%;
+}
+
+.cinema-night font {
+    color: white;
+    width: 480px;
+}
+
+.cinema-night h5 {
+    font-weight: 100;
+    text-align: center;
+    text-align: justify;
+    width: 400px;
+    margin-left: 35px;
+    color: rgba(255, 255, 255, 0.760);
+}
+
+.cinema-night h1 {
+     text-align: center;
+}
+
+.des-cinema-night {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.acara-cinema-night img {
+    width: 200px;
+    padding-left: 10px;
+}
+.acara-cinema-night img:hover {
+    width: 210px;
+    animation-delay: 0.5s;
+}
+
+.acara-cinema-night {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+
+    .cinema-night {
+        margin-top: 50px;
+    }
+    
+    .cinema-night font {
+        width: 350px; /* Atur lebar font agar sesuai dengan lebar layar */
+    }
+
+    .cinema-night h5 {
+        width: 100%; /* Atur lebar h5 agar sesuai dengan lebar layar */
+        margin-left: 0; /* Hilangkan margin kiri */
+    }
+
+    .cover-cinema-night {
+        width: 90%; /* Lebar gambar cover 100% agar sesuai dengan lebar layar */
+    }
+
+    .des-cinema-night {
+        flex-direction: column; /* Susun elemen secara vertikal */
+        align-items: center; /* Pusatkan elemen */
+        margin-top: 10px; /* Sesuaikan margin top sesuai kebutuhan */
+    }
+
+    .acara-cinema-night img {
+        width: 30%; /* Lebar gambar 100% agar sesuai dengan lebar layar */
+        padding-left: 0; /* Hapus padding kiri */
+    }
+
+    .acara-cinema-night img:hover{
+        width: 31%;
+    }
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+   background-color: rgb(17, 16, 16);
+    margin-top: 100px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-footer {
+    margin-left: 0px; 
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-footer h4{
+    margin-left: 4px;
+}
+
+.logo-sosmed{
+    margin-top: 10px;
+
+    display: flex;
+} 
+
+.left-mid-footer{
+    display: flex;
+    margin-left: 50px;
+
+}
+
+.logo-sosmed img {
+    padding-left: 5px;
+    width: 20px;
+}
+
+.mid-footer{
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.mid-footer h4{
+    margin-top: 0px;
+    font-weight: 100;
+    color: white;
+    line-height: 2;
+}
+
+.mid-footer h5 a {
+    text-decoration:  none;
+    color: rgba(255, 255, 255, 0.600);  
+}
+
+.right-footer{
+    
+}
+
+.right-footer h4{
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 0px;
+    letter-spacing: 5px;
+}
+
+.right-footer h6{
+    margin-right: 0px;
+    text-align: right;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.600);
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+    footer {
+        width: 100%;
+        height: auto;
+        background-color: rgb(17, 16, 16);
+        margin-top: 100px;
+        color: white;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+    
+    .left-mid-footer {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        margin-left: 0; 
+        margin-top: 20px;
+    }
+    
+    .left-footer {
+        margin-left: 0; 
+    }
+    
+    .logo-sosmed {
+        margin-top: 10px;
+        width: 20px;
+        display: flex;
+        justify-content: center; 
+    }
+    
+    .left-footer h4 {
+        margin-left: 0;
+        text-align: center; 
+    }
+    
+    .logo-sosmed img {
+        padding-left: 5px;
+        width: 20px;
+    }
+    
+    .mid-footer {
+        margin-top: 20px;
+        margin-left: 0;
+        text-align: center; 
+    }
+    
+    .mid-footer h4 {
+        margin-top: 0;
+        font-weight: 100;
+        color: white;
+        line-height: 2;
+    }
+    
+    .mid-footer h5 a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.600);
+        display: block; 
+    }
+    
+    .right-footer {
+        text-align: center; 
+    }
+    
+    .right-footer h4 {
+        margin-top: 20px;
+        margin-right: 0;
+        text-align: center; 
+        letter-spacing: 5px;
+    }
+    
+    .right-footer h6 {
+        margin-right: 0;
+        margin-top: 10px;
+        color: rgba(255, 255, 255, 0.600);
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+
+
+
+
+
+
+
+/* FORMAT LAHAY TABLET  */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/* LAYAR SMARTPHONE */
+@media screen and (max-width: 767px) {
+    
+}
